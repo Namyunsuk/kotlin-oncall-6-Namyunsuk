@@ -17,6 +17,18 @@ class InputView {
             }
         }
 
+        fun enterEmergencyTurn(): Pair<List<String>, List<String>> {
+            while (true) {
+                try {
+                    val weekdayTurn = enterWeekdayTurn()
+                    val holidayTurn = enterHolidayTurn()
+                    return Pair(weekdayTurn, holidayTurn)
+                } catch (e: IllegalArgumentException) {
+                    print(e.message)
+                }
+            }
+        }
+
         fun enterWeekdayTurn(): List<String> {
             while (true) {
                 print("평일 비상 근무 순번대로 사원 닉네임을 입력하세요> ")
