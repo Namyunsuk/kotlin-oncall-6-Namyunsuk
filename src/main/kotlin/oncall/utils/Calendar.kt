@@ -18,6 +18,12 @@ enum class Calendar(val month: Int, val date: Int) {
             return matchingEnum != null
         }
 
+        fun isHoliday(month: Int, date: Int, day:String):Boolean{
+            if(day=="토" ||day=="일") return true
+            if(matchHoliday(month,date)) return true
+            return false
+        }
+
         fun findLastDayOfMonth(month: Int): Int {
             val daysInMonth = when (month) {
                 1, 3, 5, 7, 8, 10, 12 -> 31
