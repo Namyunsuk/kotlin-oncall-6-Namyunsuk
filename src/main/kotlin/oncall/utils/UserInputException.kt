@@ -7,17 +7,17 @@ class UserInputException {
 
         fun checkMonthAndDay(userInput: String): Pair<Int, String> {
             val (month, day) = userInput.split(",")
-            require(checkNumber(month)) { "[ERROR] 월은 숫자로 입력해야 합니다." }
-            require(checkValidMonth(month.toInt())) { "[ERROR] 월은 1~12사이 숫자여야 합니다." }
-            require(checkValidDay(day)) { "[ERROR] 유효하지 않은 요일입니다." }
+            require(checkNumber(month)) { "[ERROR] 월은 숫자로 입력해야 합니다.\n" }
+            require(checkValidMonth(month.toInt())) { "[ERROR] 월은 1~12사이 숫자여야 합니다.\n" }
+            require(checkValidDay(day)) { "[ERROR] 유효하지 않은 요일입니다.\n" }
             return Pair(month.toInt(), day)
         }
 
         fun checkWorTurn(userInput: String): List<String> {
             val emergencyTurn = userInput.split(",")
-            require(checkNameLen(emergencyTurn)) { "[ERROR] 닉네임은 5자 이하여야 합니다." }
-            require(checkDuplicate(emergencyTurn)) { "[ERROR] 두번 편성될 수는 없습니다." }
-            require(checkWorkerNum(emergencyTurn)) { "[ERROR] 근무자는 5~35명이어야 합니다." }
+            require(checkNameLen(emergencyTurn)) { "[ERROR] 닉네임은 5자 이하여야 합니다.\n" }
+            require(checkDuplicate(emergencyTurn)) { "[ERROR] 두번 편성될 수는 없습니다.\n" }
+            require(checkWorkerNum(emergencyTurn)) { "[ERROR] 근무자는 5~35명이어야 합니다.\n" }
             return emergencyTurn
         }
 

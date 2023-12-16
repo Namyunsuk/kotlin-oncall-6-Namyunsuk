@@ -18,8 +18,8 @@ class InputView {
         }
 
         fun enterWeekdayTurn(): List<String> {
-            print("평일 비상 근무 순번대로 사원 닉네임을 입력하세요> ")
             while (true) {
+                print("평일 비상 근무 순번대로 사원 닉네임을 입력하세요> ")
                 val userInput = Console.readLine()
                 try {
                     return UserInputException.checkWorTurn(userInput)
@@ -30,8 +30,8 @@ class InputView {
         }
 
         fun enterHolidayTurn(): List<String> {
-            print("휴일 비상 근무 순번대로 사원 닉네임을 입력하세요> ")
             while (true) {
+                print("휴일 비상 근무 순번대로 사원 닉네임을 입력하세요> ")
                 val userInput = Console.readLine()
                 try {
                     return UserInputException.checkWorTurn(userInput)
