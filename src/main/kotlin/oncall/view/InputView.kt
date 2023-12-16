@@ -29,28 +29,16 @@ class InputView {
             }
         }
 
-        fun enterWeekdayTurn(): List<String> {
-            while (true) {
-                print("평일 비상 근무 순번대로 사원 닉네임을 입력하세요> ")
-                val userInput = Console.readLine()
-                try {
-                    return UserInputException.checkWorTurn(userInput)
-                } catch (e: IllegalArgumentException) {
-                    print(e.message)
-                }
-            }
+        private fun enterWeekdayTurn(): List<String> {
+            print("평일 비상 근무 순번대로 사원 닉네임을 입력하세요> ")
+            val userInput = Console.readLine()
+            return UserInputException.checkWorTurn(userInput)
         }
 
-        fun enterHolidayTurn(): List<String> {
-            while (true) {
-                print("휴일 비상 근무 순번대로 사원 닉네임을 입력하세요> ")
-                val userInput = Console.readLine()
-                try {
-                    return UserInputException.checkWorTurn(userInput)
-                } catch (e: IllegalArgumentException) {
-                    print(e.message)
-                }
-            }
+        private fun enterHolidayTurn(): List<String> {
+            print("휴일 비상 근무 순번대로 사원 닉네임을 입력하세요> ")
+            val userInput = Console.readLine()
+            return UserInputException.checkWorTurn(userInput)
         }
     }
 }
