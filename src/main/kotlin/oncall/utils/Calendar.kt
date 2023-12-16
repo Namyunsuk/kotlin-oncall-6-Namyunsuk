@@ -18,9 +18,9 @@ enum class Calendar(val month: Int, val date: Int) {
             return matchingEnum != null
         }
 
-        fun isHoliday(month: Int, date: Int, day:String):Boolean{
-            if(day=="토" ||day=="일") return true
-            if(matchHoliday(month,date)) return true
+        fun isHoliday(month: Int, date: Int, day: String): Boolean {
+            if (day == "토" || day == "일") return true
+            if (matchHoliday(month, date)) return true
             return false
         }
 

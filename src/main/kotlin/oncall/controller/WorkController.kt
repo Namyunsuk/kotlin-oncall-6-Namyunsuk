@@ -8,7 +8,7 @@ class WorkController {
     val emergencyWorkSheet = mutableMapOf<String, String>()
     fun start() {
         val (month, dayOfWeek) = InputView.enterMonthAndDay()
-        val (weekdayTurn,holidayTurn) = InputView.enterEmergencyTurn()
+        val (weekdayTurn, holidayTurn) = InputView.enterEmergencyTurn()
         val dateAndDay = makeCalendar(month, dayOfWeek)
         makeEmergencyWorSheet(dateAndDay, month, holidayTurn.toMutableList(), weekdayTurn.toMutableList())
         OutputView.printMonthWorkTurn(emergencyWorkSheet)
