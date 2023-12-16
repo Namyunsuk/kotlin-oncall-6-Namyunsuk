@@ -41,6 +41,7 @@ enum class Calendar(val month: Int, val date: Int) {
             for (day in 1..daysInMonth) {
                 if (matchHoliday(month, day)) {
                     dayAndDate[day] = dayNames[currentDayOfWeek] + "(휴일)"
+                    currentDayOfWeek = (currentDayOfWeek + 1) % 7
                     continue
                 }
                 dayAndDate[day] = dayNames[currentDayOfWeek]
