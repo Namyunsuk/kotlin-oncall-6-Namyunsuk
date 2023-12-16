@@ -11,7 +11,8 @@ enum class Calendar(val month: Int, val date: Int) {
     EIGHT(12, 15);
 
     companion object {
-        val day = listOf("월", "화", "수", "목", "금", "토", "일")
+        const val LEGAL_HOLIDAY = "(휴일)"
+        const val FIRST_DAY_OF_MONTH = 1
 
         fun matchHoliday(month: Int, date: Int): Boolean {
             val matchingEnum = entries.find { it.month == month && it.date == date }
@@ -38,9 +39,9 @@ enum class Calendar(val month: Int, val date: Int) {
             val dayAndDate = mutableMapOf<Int, String>()
             val dayNames = arrayOf("일", "월", "화", "수", "목", "금", "토")
             var currentDayOfWeek = dayNames.indexOf(dayOfWeek)
-            for (day in 1..daysInMonth) {
+            for (day in FIRST_DAY_OF_MONTH..daysInMonth) {
                 if (matchHoliday(month, day)) {
-                    dayAndDate[day] = dayNames[currentDayOfWeek] + "(휴일)"
+                    dayAndDate[day] = dayNames[currentDayOfWeek] + LEGAL_HOLIDAY
                     currentDayOfWeek = (currentDayOfWeek + 1) % 7
                     continue
                 }
