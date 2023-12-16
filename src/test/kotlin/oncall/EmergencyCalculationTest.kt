@@ -1,0 +1,4 @@
+package oncall
+
+class EmergencyCalculationTest {
+}
